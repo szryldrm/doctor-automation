@@ -25,7 +25,7 @@
                     <i class="ti-user bg-inverse"></i>
                     <div class="bodystate">
                         <h4>342</h4>
-                        <span class="text-muted">Total Randevu</span>
+                        <span class="text-muted">Total1 Randevu</span>
                     </div>
                 </div>
             </div>
