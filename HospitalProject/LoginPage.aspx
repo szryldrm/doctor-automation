@@ -42,19 +42,25 @@
                             <img src="../assets/plugins/images/testCompanyLogo.png" alt="Home" /></a>
                         <div class="form-group m-t-40">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Kullanıcı Adınız">
+                                <input id="txtUserName" runat="server" class="form-control" type="text" placeholder="Kullanıcı Adınız">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Şifreniz">
+                                <input id="txtPassword" runat="server" class="form-control" type="password" placeholder="Şifreniz">
                             </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
-                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Giriş Yap</button>
+                                <button id="btnLogin" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit"  runat="server" onserverclick="btnLogin_ServerClick">Giriş Yap</button>
                             </div>
                         </div>
+                        <div class="form-group text-center m-t-20">
+                            <div class="col-xs-12">
+                                <asp:Panel id="alertDiv" runat="server" Visible="false"><asp:Label ID="lblAlert" runat="server"/></asp:Panel>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
         </section>
