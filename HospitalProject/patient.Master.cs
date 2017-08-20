@@ -14,7 +14,7 @@ namespace HospitalProject
         {
             if (Session["Login"] != null)
             {
-                var userName = hsp.Doctors.SingleOrDefault(u => u.dt_TC == Session["Login"].ToString()).dt_NameSurname;
+                var userName = hsp.Patients.SingleOrDefault(u => u.pt_TC == Session["Login"].ToString()).pt_NameSurname;
                 lblName.Text = userName;
                 lblName2.Text = userName;
             }

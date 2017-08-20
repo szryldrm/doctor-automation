@@ -37,7 +37,7 @@
         <section id="wrapper" class="login-register">
             <div class="login-box login-sidebar">
                 <div class="white-box">
-                    <div class="form-horizontal form-material" id="loginform" action="index.html">
+                    <div class="form-horizontal form-material" id="loginform">
                         <a href="javascript:void(0)" class="text-center db">
                             <img src="../assets/plugins/images/testCompanyLogo.png" alt="Home" /></a>
                         <div class="form-group m-t-40">
