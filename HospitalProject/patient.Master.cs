@@ -12,21 +12,26 @@ namespace HospitalProject
         HospitalDBDataContext hsp = new HospitalDBDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Login"] != null)
+            if (IsPostBack) return;
+            checkSession();
+        }
+
+        private void checkSession()
+        {
+            if (Session["TC"] == null)
             {
-                string tc = Session["Login"].ToString();
-                var userName = hsp.Patients.FirstOrDefault(u => u.pt_TC == tc).pt_NameSurname;
-                lblName.Text = userName;
-                lblName2.Text = userName;
+                Response.Redirect("~/Default.aspx");
             }
             else
-                Response.Redirect("~/loginPage.aspx");
+            {
+                lblName.Text = Session["Name"].ToString();
+            }
         }
 
         protected void lnkCikis_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("~/loginPage.aspx");
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

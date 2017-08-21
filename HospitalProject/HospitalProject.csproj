@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\plugins\images\patientsLogo.png" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="packages.config" />
     <Content Include="assets\bootstrap\CHANGELOG.md" />
     <Content Include="assets\bootstrap\dist\css\bootstrap-grid.css.map" />
@@ -3615,31 +3618,29 @@
     <Content Include="assets\plugins\images\users\salman.jpg" />
     <Content Include="assets\plugins\images\users\sonu.jpg" />
     <Content Include="assets\plugins\images\users\varun.jpg" />
-    <Content Include="default.aspx" />
-    <Content Include="LoginPage.aspx" />
     <Content Include="patientProfile.aspx" />
     <Content Include="updateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="HospitalDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="patient.Master.cs">
       <DependentUpon>patient.Master</DependentUpon>

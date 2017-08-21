@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HospitalProject {
+namespace Test {
     
     
-    public partial class LoginPage {
+    public partial class _base {
         
         /// <summary>
-        /// theme control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlLink theme;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
         /// form1 control.
@@ -31,48 +31,30 @@ namespace HospitalProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtUserName control.
+        /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtUserName;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
         
         /// <summary>
-        /// txtPassword control.
+        /// txtinput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtinput;
         
         /// <summary>
-        /// btnLogin control.
+        /// btnClick control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnLogin;
-        
-        /// <summary>
-        /// alertDiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel alertDiv;
-        
-        /// <summary>
-        /// lblAlert control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAlert;
+        protected global::System.Web.UI.WebControls.Button btnClick;
     }
 }

@@ -4,35 +4,63 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace HospitalProject
 {
-    public partial class _default : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
-        HospitalDBDataContext hsp = new HospitalDBDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack) return;
+            check();
+        }
+
+        private void check()
+        {
+            if (Session["TC"] != null)
             {
-                var getList = (from PE in hsp.PastExamines
-                               join DO in hsp.Doctors on PE.dt_ID equals DO.dt_ID
-                               join PT in hsp.Patients on PE.pt_ID equals PT.pt_ID
-                               join DP in hsp.Departments on DO.dt_ID equals DP.dp_ID
-                               where PT.pt_TC == Session["Login"].ToString()
-                               select new
-                               {
-                                   PE.ex_Aciklama,
-                                   PE.ex_Sonuc,
-                                   PE.ex_Tarih,
-                                   PE.ex_Ucret,
-                                   DO.dt_NameSurname,
-                                   DP.dp_Name
-                               }).ToList();
-
-                rptPastExamine.DataSource = getList;
-                rptPastExamine.DataBind();
+                Response.Redirect("Dashboard.aspx");
             }
+        }
 
+        HospitalDBDataContext hsp = new HospitalDBDataContext();
+
+        protected void btnLogin_ServerClick(object sender, EventArgs e)
+        {
+            try
+            {
+                string UserName = txtUserName.Value.Trim();
+                string PWD = txtPassword.Value.Trim();
+                var q = hsp.Patients.Where(x => x.pt_TC == UserName && x.pt_Password == PWD).ToList();
+                if (q.Count() == 1)
+                {
+                    alertDiv.Visible = true;
+                    alertDiv.CssClass = "alert alert-success";
+                    lblAlert.Text = "Giriş Başarılı Yönlendiriliyorsunuz...";
+                    Session["TC"] = q.FirstOrDefault().pt_TC;
+                    Session["Name"] = q.FirstOrDefault().pt_NameSurname;
+                    HtmlMeta meta = new HtmlMeta();
+                    meta.HttpEquiv = "Refresh";
+                    meta.Content = "2;url=../Dashboard.aspx";
+                    this.Page.Controls.Add(meta);
+                }
+            }
+            catch (Exception ex)
+            {
+                alertDiv.Visible = true;
+                alertDiv.CssClass = "alert alert-warning";
+                lblAlert.Text = "Hata oluştu! Hata: " + ex.Message;
+            }
+            //var query = (from data in hsp.Patients
+            //             where data.pt_TC == txtUserName.Value && data.pt_Password == txtPassword.Value
+            //             select data).Any();
+            //if (txtUserName.Value == String.Empty && txtPassword.Value == String.Empty)
+            //{
+            //    alertDiv.Visible = true;
+            //    alertDiv.CssClass = "alert alert-warning";
+            //    lblAlert.Text = "Kullanıcı Adı veya Şifre Boş Olamaz!";
+            //}
         }
     }
 }
