@@ -3618,6 +3618,7 @@
     <Content Include="default.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="patientProfile.aspx" />
+    <Content Include="updateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -3655,6 +3656,13 @@
       <DependentUpon>patientProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="updateProfile.aspx.cs">
+      <DependentUpon>updateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updateProfile.aspx.designer.cs">
+      <DependentUpon>updateProfile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\plugins\bower_components\etc\" />

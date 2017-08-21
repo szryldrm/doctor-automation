@@ -9,9 +9,25 @@ namespace HospitalProject
 {
     public partial class patientProfile : System.Web.UI.Page
     {
+        HospitalDBDataContext hsp = new HospitalDBDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
+            var getPatient = (from pt in hsp.Patients
+                             where pt.pt_TC == Session["Login"].ToString()
+                              select pt).FirstOrDefault();
 
+            lblAdSoyad.Text = getPatient.pt_NameSurname;
+            lblAdres.Text = getPatient.pt_Adres;
+            if (getPatient.pt_Cinsiyet == "E")
+            {
+                lblCinsiyet.Text = "Erkek";
+            }
+            else
+            {
+                lblCinsiyet.Text = "Kadın";
+            }
+            lblMeslek.Text = getPatient.pt_Meslek;
+            lblTel.Text = getPatient.pt_Tel;
         }
     }
 }

@@ -35,8 +35,8 @@
                 <div class="r-icon-stats">
                     <i class="ti-wallet bg-megna"></i>
                     <div class="bodystate">
-                        <h4>$34650</h4>
-                        <span class="text-muted">Aylık Muayene Ücreti</span>
+                        <h4>$34</h4>
+                        <span class="text-muted">Aylık Ödenen</span>
                     </div>
                 </div>
             </div>
@@ -46,8 +46,8 @@
                 <div class="r-icon-stats">
                     <i class="ti-wallet bg-inverse"></i>
                     <div class="bodystate">
-                        <h4>$34650</h4>
-                        <span class="text-muted">Total Muayene Ücreti</span>
+                        <h4>$34</h4>
+                        <span class="text-muted">Total Ödenen</span>
                     </div>
                 </div>
             </div>

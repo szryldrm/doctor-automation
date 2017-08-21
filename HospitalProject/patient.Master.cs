@@ -14,12 +14,19 @@ namespace HospitalProject
         {
             if (Session["Login"] != null)
             {
-                var userName = hsp.Patients.SingleOrDefault(u => u.pt_TC == Session["Login"].ToString()).pt_NameSurname;
+                string tc = Session["Login"].ToString();
+                var userName = hsp.Patients.FirstOrDefault(u => u.pt_TC == tc).pt_NameSurname;
                 lblName.Text = userName;
                 lblName2.Text = userName;
             }
             else
                 Response.Redirect("~/loginPage.aspx");
+        }
+
+        protected void lnkCikis_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/loginPage.aspx");
         }
     }
 }

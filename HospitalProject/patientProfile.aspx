@@ -24,12 +24,12 @@
                         <!-- .row -->
                         <div class="row text-center m-t-10">
                             <div class="col-md-6 b-r">
-                                <strong>Name</strong>
-                                <p>Jonathan Doe</p>
+                                <strong>Adı Soyadı</strong>
+                                <p><asp:Label ID="lblAdSoyad" runat="server"></asp:Label></p>
                             </div>
                             <div class="col-md-6">
-                                <strong>Occupation</strong>
-                                <p>Engineer</p>
+                                <strong>Meslek</strong>
+                                <p><asp:Label ID="lblMeslek" runat="server"></asp:Label></p>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -37,12 +37,12 @@
                         <!-- .row -->
                         <div class="row text-center m-t-10">
                             <div class="col-md-6 b-r">
-                                <strong>Email ID</strong>
-                                <p>jondoe@gmail.com</p>
+                                <strong>Cinsiyet</strong>
+                                <p><asp:Label ID="lblCinsiyet" runat="server"></asp:Label></p>
                             </div>
                             <div class="col-md-6">
-                                <strong>Phone</strong>
-                                <p>+123 456 789</p>
+                                <strong>Telefon</strong>
+                                <p><asp:Label ID="lblTel" runat="server"></asp:Label></p>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -50,11 +50,9 @@
                         <!-- .row -->
                         <div class="row text-center m-t-10">
                             <div class="col-md-12">
-                                <strong>Address</strong>
+                                <strong>Adres</strong>
                                 <p>
-                                    E104, Dharti-2, Chandlodia Ahmedabad
-                                            <br>
-                                    Gujarat, India.
+                                    <asp:Label ID="lblAdres" runat="server"></asp:Label>
                                 </p>
                             </div>
                         </div>
