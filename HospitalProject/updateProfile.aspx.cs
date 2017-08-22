@@ -19,25 +19,35 @@ namespace HospitalProject
             }
         }
 
-        
+
 
         protected void btnKaydet_ServerClick(object sender, EventArgs e)
         {
             try
             {
-                var updateUser = hsp.Patients.First(x => x.pt_TC == Session["TC"].ToString());
+                if (inputAdres.Value == String.Empty || inputAdSoyad.Value == String.Empty || inputCinsiyet.Value == String.Empty || inputMeslek.Value == String.Empty || inputTel.Value == String.Empty)
+                {
+                    alertDiv.Visible = true;
+                    alertDiv.CssClass = "alert alert-warning";
+                    lblAlert.Text = "Tüm Alanları Doldurun";
+                }
+                else
+                {
+                    var updateUser = hsp.Patients.First(x => x.pt_TC == Session["TC"].ToString());
 
-                updateUser.pt_NameSurname = inputAdSoyad.Value;
-                updateUser.pt_Meslek = inputMeslek.Value;
-                updateUser.pt_Cinsiyet = inputCinsiyet.Value.Substring(0, 1).ToUpper();
-                updateUser.pt_Adres = inputAdres.Value;
-                updateUser.pt_Tel = inputTel.Value.Trim();
+                    updateUser.pt_NameSurname = inputAdSoyad.Value;
+                    updateUser.pt_Meslek = inputMeslek.Value;
+                    updateUser.pt_Cinsiyet = inputCinsiyet.Value.Substring(0, 1).ToUpper();
+                    updateUser.pt_Adres = inputAdres.Value;
+                    updateUser.pt_Tel = inputTel.Value.Trim();
 
-                hsp.SubmitChanges();
-                alertDiv.Visible = true;
-                alertDiv.CssClass = "alert alert-success";
-                lblAlert.Text = "Güncelleme Başarılı";
-                getUserInformation();
+                    hsp.SubmitChanges();
+                    alertDiv.Visible = true;
+                    alertDiv.CssClass = "alert alert-success";
+                    lblAlert.Text = "Güncelleme Başarılı";
+                    getUserInformation();
+                }
+
             }
             catch (Exception ex)
             {
@@ -47,7 +57,7 @@ namespace HospitalProject
                 lblAlert.Text = "Hata Oluştu! Hata: " + ex.Message;
             }
 
-            
+
         }
 
         private void getUserInformation()

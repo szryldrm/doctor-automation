@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/patient.Master" AutoEventWireup="true" CodeBehind="updateProfile.aspx.cs" Inherits="HospitalProject.updateProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/doctors/doctor.Master" AutoEventWireup="true" CodeBehind="DoctorDetayRandevu.aspx.cs" Inherits="HospitalProject.doctors.DoctorDetayRandevu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="contentHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBreadcrump" runat="server">
-    <h4 class="page-title">Profil Düzenleme</h4>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentIcerik" runat="server">
     <div class="row">
@@ -15,45 +14,39 @@
                     <div class="col-sm-12 col-xs-12">
                         <div>
                             <div class="form-group">
-                                <label for="inputAdSoyad">Ad Soyad</label>
+                                <label for="inputAdSoyad">Açıklama</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-user"></i></div>
-                                    <input type="text" class="form-control" runat="server" id="inputAdSoyad" placeholder="Ad Soyad">
+                                    <input type="text" class="form-control" runat="server" id="inputAciklama" placeholder="Açıklama">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail">Cinsiyet</label>
+                                <label for="inputEmail">Sonuç</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-email"></i></div>
-                                    <input type="text" class="form-control" runat="server" id="inputCinsiyet" placeholder="Cinsiyet">
+                                    <input type="text" class="form-control" runat="server" id="inputSonuc" placeholder="Sonuç">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputMeslek">Meslek</label>
+                                <label for="inputMeslek">Tarih</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-id-badge"></i></div>
-                                    <input type="text" class="form-control" runat="server" id="inputMeslek" placeholder="Meslek">
+                                    <input type="text" class="form-control" runat="server" id="inputTarih" placeholder="Tarih">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputTel">Telefon</label>
+                                <label for="inputTel">Ücret</label>
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="ti-mobile"></i></div>
-                                    <input type="text" class="form-control" runat="server" id="inputTel" placeholder="Telefon">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputAdres">Adres</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="ti-home"></i></div>
-                                    <input type="text" class="form-control" runat="server" id="inputAdres" placeholder="Adres">
+                                    <input type="text" class="form-control" runat="server" id="inputUcret" placeholder="Ücret">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info waves-effect waves-light m-r-10" id="btnKaydet" onserverclick="btnKaydet_ServerClick" runat="server">Kaydet</button>
 
                             <div class="form-group text-center m-t-20">
                                 <div class="col-xs-12">
-                                    <asp:panel id="alertDiv" runat="server" visible="false"><asp:Label ID="lblAlert" runat="server"/></asp:panel>
+                                    <asp:Panel ID="alertDiv" runat="server" Visible="false">
+                                        <asp:Label ID="lblAlert" runat="server" /></asp:Panel>
                                 </div>
                             </div>
                         </div>
@@ -71,15 +64,16 @@
                     <!-- .row -->
                     <div class="row text-center m-t-10">
                         <div class="col-md-6 b-r">
-                            <strong>Ad Soyad</strong>
+                            <strong>Açiklama</strong>
                             <p>
-                                <label id="lblAdSoyad" runat="server"></label>
+                                <label id="lblAciklama" runat="server"></label>
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <strong>Meslek</strong>
+                            <strong>Sonuç</strong>
                             <p>
-                                <label id="lblMeslek" runat="server"></label></p>
+                                <label id="lblSonuc" runat="server"></label>
+                            </p>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -87,14 +81,16 @@
                     <!-- .row -->
                     <div class="row text-center m-t-10">
                         <div class="col-md-6 b-r">
-                            <strong>Cinsiyet</strong>
+                            <strong>Tarih</strong>
                             <p>
-                                <label id="lblCinsiyet" runat="server"></label></p>
+                                <label id="lblTarih" runat="server"></label>
+                            </p>
                         </div>
                         <div class="col-md-6">
-                            <strong>Telefon</strong>
+                            <strong>Ücret</strong>
                             <p>
-                                <label id="lblTel" runat="server"></label></p>
+                                <label id="lblUcret" runat="server"></label>
+                            </p>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -102,29 +98,19 @@
                     <!-- .row -->
                     <div class="row text-center m-t-10">
                         <div class="col-md-12">
-                            <strong>Adres</strong>
+                            <strong>Hasta Adı</strong>
                             <p>
-                                <label id="lblAdres" runat="server"></label>
+                                <label id="lblHastaAdi" runat="server"></label>
                             </p>
                         </div>
                     </div>
+                    <hr />
+                    <button type="submit" class="btn btn-danger waves-effect waves-light m-r-10 center-block" id="btnSil" onserverclick="btnSil_ServerClick" runat="server">Randevuyu Sil</button>
+
                 </div>
             </div>
         </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contentJS" runat="server">
-    <%--    <script>
-$(function() {
-    $('#inputAdSoyad').on('change keyup', function() {
-        var myVal, newVal = $.makeArray($('#inputAdSoyad').map(function(){
-        if (myVal = $(this).val()) {
-            return(myVal);
-        }
-    }))
-        $('#lblAdSoyad').text(newVal)
-                                              
-  });
-});
-    </script>--%>
 </asp:Content>

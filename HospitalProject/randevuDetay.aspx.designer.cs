@@ -10,60 +10,51 @@
 namespace HospitalProject {
     
     
-    public partial class patientProfile {
+    public partial class randevuDetay {
         
         /// <summary>
-        /// lblAdSoyad control.
+        /// lblAciklama control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdSoyad;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAciklama;
         
         /// <summary>
-        /// lblMeslek control.
+        /// lblSonuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMeslek;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSonuc;
         
         /// <summary>
-        /// lblCinsiyet control.
+        /// lblTarih control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCinsiyet;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTarih;
         
         /// <summary>
-        /// lblTel control.
+        /// lblUcret control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblUcret;
         
         /// <summary>
-        /// lblAdres control.
+        /// lblDoktor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdres;
-        
-        /// <summary>
-        /// btnYonlendir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnYonlendir;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblDoktor;
     }
 }

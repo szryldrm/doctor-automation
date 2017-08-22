@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/patient.Master" AutoEventWireup="true" CodeBehind="patientProfile.aspx.cs" Inherits="HospitalProject.patientProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/doctors/doctor.Master" AutoEventWireup="true" CodeBehind="doctorsProfile.aspx.cs" Inherits="HospitalProject.doctors.doctorsProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="contentHead" runat="server">
     <style>
@@ -26,12 +26,14 @@
                             <div class="col-md-6 b-r">
                                 <strong>Adı Soyadı</strong>
                                 <p>
-                                    <asp:Label ID="lblAdSoyad" runat="server"></asp:Label></p>
+                                    <asp:label id="lblAdSoyad" runat="server"></asp:label>
+                                </p>
                             </div>
                             <div class="col-md-6">
-                                <strong>Meslek</strong>
+                                <strong>Bölüm</strong>
                                 <p>
-                                    <asp:Label ID="lblMeslek" runat="server"></asp:Label></p>
+                                    <asp:label id="lblBolum" runat="server"></asp:label>
+                                </p>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -41,12 +43,14 @@
                             <div class="col-md-6 b-r">
                                 <strong>Cinsiyet</strong>
                                 <p>
-                                    <asp:Label ID="lblCinsiyet" runat="server"></asp:Label></p>
+                                    <asp:label id="lblCinsiyet" runat="server"></asp:label>
+                                </p>
                             </div>
                             <div class="col-md-6">
                                 <strong>Telefon</strong>
                                 <p>
-                                    <asp:Label ID="lblTel" runat="server"></asp:Label></p>
+                                    <asp:label id="lblTel" runat="server"></asp:label>
+                                </p>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -56,15 +60,8 @@
                             <div class="col-md-12">
                                 <strong>Adres</strong>
                                 <p>
-                                    <asp:Label ID="lblAdres" runat="server"></asp:Label>
+                                    <asp:label id="lblAdres" runat="server"></asp:label>
                                 </p>
-                            </div>
-                        </div>
-                        <hr>
-                        <!-- .row -->
-                        <div class="row text-center m-t-10">
-                            <div class="col-md-12">
-                                <asp:Button ID="btnYonlendir" runat="server" CssClass="btn btn-info waves-effect waves-light m-r-10" OnClick="btnYonlendir_Click" Text="Profilimi Düzenle"/>
                             </div>
                         </div>
                     </div>

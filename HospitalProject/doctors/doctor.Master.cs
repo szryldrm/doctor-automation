@@ -5,20 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HospitalProject
+namespace HospitalProject.doctors
 {
-    public partial class patient : System.Web.UI.MasterPage
+    public partial class doctor : System.Web.UI.MasterPage
     {
-        HospitalDBDataContext hsp = new HospitalDBDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
             checkSession();
         }
 
+        HospitalDBDataContext hsp = new HospitalDBDataContext();
         private void checkSession()
         {
-            if (Session["TC"] == null)
+            if (Session["dtTC"] == null)
             {
                 Response.Redirect("~/Default.aspx");
             }

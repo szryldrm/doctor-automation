@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HospitalProject {
+namespace HospitalProject.doctors {
     
     
-    public partial class patientProfile {
+    public partial class doctorsProfile {
         
         /// <summary>
         /// lblAdSoyad control.
@@ -22,13 +22,13 @@ namespace HospitalProject {
         protected global::System.Web.UI.WebControls.Label lblAdSoyad;
         
         /// <summary>
-        /// lblMeslek control.
+        /// lblBolum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMeslek;
+        protected global::System.Web.UI.WebControls.Label lblBolum;
         
         /// <summary>
         /// lblCinsiyet control.
@@ -56,14 +56,5 @@ namespace HospitalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdres;
-        
-        /// <summary>
-        /// btnYonlendir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnYonlendir;
     }
 }

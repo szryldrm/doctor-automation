@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="patient.master.cs" Inherits="HospitalProject.patient" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="doctor.master.cs" Inherits="HospitalProject.doctors.doctor" %>
 
 <!DOCTYPE html>
 
@@ -50,7 +50,7 @@
                     <!-- Toggle icon for mobile view -->
                     <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
                     <div class="top-left-part">
-                        <a class="logo" href="../Dashboard.aspx"><b>
+                        <a class="logo" href="index.html"><b>
                             <img src="../assets/plugins/images/tLogo.png" alt="home" /></b><span class="hidden-xs"><strong>TEST</strong>Company</span></a>
                     </div>
                     <!-- /Logo -->
@@ -61,9 +61,11 @@
                     <ul class="nav navbar-top-links navbar-right pull-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
-                                <img src="../assets/plugins/images/patientIcon.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Sn. <asp:Label ID="lblName2" runat="server" Text=""></asp:Label></b> </a>
+                                <img src="../assets/plugins/images/patientIcon.png" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Sn.
+                                    <asp:Label ID="lblName2" runat="server" Text=""></asp:Label></b> </a>
                             <ul class="dropdown-menu dropdown-user animated flipInX">
-                                <li><asp:LinkButton ID="lnkCikis" runat="server" OnClick="lnkCikis_Click"><i class="fa fa-power-off"></i> Çıkış</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lnkCikis" runat="server" OnClick="lnkCikis_Click"><i class="fa fa-power-off"></i> Çıkış</asp:LinkButton></li>
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
@@ -92,14 +94,15 @@
                         <li class="user-pro">
                             <a href="#" class="waves-effect">
                                 <img src="../assets/plugins/images/patientIcon.png" alt="user-img" class="img-circle">
-                                <span class="hide-menu">Sn. <asp:Label ID="lblName" runat="server" Text=""></asp:Label><span class="fa arrow"></span></span>
+                                <span class="hide-menu">Sn.
+                                    <asp:Label ID="lblName" runat="server" Text=""></asp:Label><span class="fa arrow"></span></span>
                             </a>
                             <ul class="nav nav-second-level">
-                                <li><a href="../patientProfile.aspx"><i class="ti-user"></i>Profilim</a></li>
+                                <li><a href="../doctors/doctorsProfile.aspx"><i class="ti-user"></i>Profilim</a></li>
                             </ul>
                         </li>
                         <li class="nav-small-cap m-t-10">-- Menüler</li>
-                        <li><a href="../Dashboard.aspx" class="waves-effect"><i class="ti-files fa-fw"></i><span class="hide-menu">Anasayfa</span></a></li>
+                        <li><a href="../doctors/dtDashboard.aspx" class="waves-effect"><i class="ti-files fa-fw"></i><span class="hide-menu">Anasayfa</span></a></li>
                     </ul>
                 </div>
             </div>

@@ -22,6 +22,7 @@ namespace HospitalProject
             if (Session["TC"] != null)
             {
                 string tc = Session["TC"].ToString();
+
                 var getList = (from PE in hsp.PastExamines
                                join DO in hsp.Doctors on PE.dt_ID equals DO.dt_ID
                                join PT in hsp.Patients on PE.pt_ID equals PT.pt_ID
@@ -29,13 +30,14 @@ namespace HospitalProject
                                where PT.pt_TC == tc
                                select new
                                {
+                                   PE.ex_ID,
                                    PE.ex_Aciklama,
                                    PE.ex_Sonuc,
                                    PE.ex_Tarih,
                                    PE.ex_Ucret,
                                    DO.dt_NameSurname,
                                    DP.dp_Name
-                               }).ToList();
+                               }).ToList().OrderByDescending(x => x.ex_Tarih);
 
                 rptPastExamine.DataSource = getList;
                 rptPastExamine.DataBind();

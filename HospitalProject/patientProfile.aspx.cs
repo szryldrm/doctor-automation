@@ -15,7 +15,7 @@ namespace HospitalProject
             if (Session["TC"] != null)
             {
                 var getPatient = (from pt in hsp.Patients
-                                  where pt.pt_TC == Session["Login"].ToString()
+                                  where pt.pt_TC == Session["TC"].ToString()
                                   select pt).FirstOrDefault();
 
                 lblAdSoyad.Text = getPatient.pt_NameSurname;
@@ -31,6 +31,11 @@ namespace HospitalProject
                 lblMeslek.Text = getPatient.pt_Meslek;
                 lblTel.Text = getPatient.pt_Tel;
             }
+        }
+
+        protected void btnYonlendir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/updateProfile.aspx");
         }
     }
 }

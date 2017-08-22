@@ -20,7 +20,7 @@ namespace HospitalProject
         {
             if (Session["TC"] != null)
             {
-                Response.Redirect("Dashboard.aspx");
+                Response.Redirect("~/Dashboard.aspx");
             }
         }
 
@@ -33,6 +33,7 @@ namespace HospitalProject
                 string UserName = txtUserName.Value.Trim();
                 string PWD = txtPassword.Value.Trim();
                 var q = hsp.Patients.Where(x => x.pt_TC == UserName && x.pt_Password == PWD).ToList();
+                var d = hsp.Doctors.Where(x => x.dt_TC == UserName && x.dt_Password == PWD).ToList();
                 if (q.Count() == 1)
                 {
                     alertDiv.Visible = true;
@@ -44,6 +45,24 @@ namespace HospitalProject
                     meta.HttpEquiv = "Refresh";
                     meta.Content = "2;url=../Dashboard.aspx";
                     this.Page.Controls.Add(meta);
+                }
+                else if (d.Count() == 1)
+                {
+                    alertDiv.Visible = true;
+                    alertDiv.CssClass = "alert alert-success";
+                    lblAlert.Text = "Giriş Başarılı Doktor Sayfasına Yönlendiriliyorsunuz...";
+                    Session["dtTC"] = d.FirstOrDefault().dt_TC;
+                    Session["Name"] = d.FirstOrDefault().dt_NameSurname;
+                    HtmlMeta meta = new HtmlMeta();
+                    meta.HttpEquiv = "Refresh";
+                    meta.Content = "2;url=../doctors/dtDashboard.aspx";
+                    this.Page.Controls.Add(meta);
+                }
+                else
+                {
+                    alertDiv.Visible = true;
+                    alertDiv.CssClass = "alert alert-danger";
+                    lblAlert.Text = "Kullanıcı Adı veya Şifre Hatalı...";
                 }
             }
             catch (Exception ex)

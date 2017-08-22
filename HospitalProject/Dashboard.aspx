@@ -7,53 +7,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentIcerik" runat="server">
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="white-box">
-                <div class="r-icon-stats">
-                    <i class="ti-user bg-megna"></i>
-                    <div class="bodystate">
-                        <h4>370</h4>
-                        <span class="text-muted">Aylık Randevu</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="white-box">
-                <div class="r-icon-stats">
-                    <i class="ti-user bg-inverse"></i>
-                    <div class="bodystate">
-                        <h4>342</h4>
-                        <span class="text-muted">Total Randevu</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="white-box">
-                <div class="r-icon-stats">
-                    <i class="ti-wallet bg-megna"></i>
-                    <div class="bodystate">
-                        <h4>$34</h4>
-                        <span class="text-muted">Aylık Ödenen</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <div class="white-box">
-                <div class="r-icon-stats">
-                    <i class="ti-wallet bg-inverse"></i>
-                    <div class="bodystate">
-                        <h4>$34</h4>
-                        <span class="text-muted">Total Ödenen</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Geçmiş Randevular</h3>
@@ -67,8 +20,8 @@
                                         <th>ID</th>
                                         <th>Tarih</th>
                                         <th>Bölüm</th>
-                                        <th>Doktor</th>
                                         <th>Detay</th>
+                                        <th><i class="ti-settings"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,7 +32,7 @@
                                 <td><%# Eval("ex_Tarih", "{0:dd/MM/yyyy}") %></td>
                                 <td><%# Eval("dp_Name") %></td>
                                 <td><%# Eval("dt_NameSurname") %></td>
-                                <td><a href="#">Görüntüle</a></td>
+                                <td><a href='<%#Eval("ex_ID", "randevuDetay.aspx?detayid={0}")%>'>Görüntüle</a></td>
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
